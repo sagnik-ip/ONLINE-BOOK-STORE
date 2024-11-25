@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC SHELF - Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="title">EPIC SHELF - Your Cart</div>
+    </header>
+
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div id="total-price">
+            <h3>Total: ₹<span id="total-amount">0</span></h3>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+
+    <script>
+        // Retrieve cart from localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Display cart items
+        let cartItemsContainer = document.getElementById("cart-items");
+        let totalAmount = 0;
+
+        cart.forEach(item => {
+            let itemElement = document.createElement("div");
+            itemElement.classList.add("cart-item");
+            itemElement.innerHTML = `<p>${item.name}</p><p>₹${item.price}</p>`;
+            cartItemsContainer.appendChild(itemElement);
+
+            totalAmount += item.price;
+        });
+
+        // Update the total price
+        document.getElementById("total-amount").textContent = totalAmount;
+
+        // Handle checkout (you can add more functionality here)
+        document.querySelector(".checkout-btn").addEventListener("click", function() {
+            if (cart.length > 0) {
+                alert("Proceeding to checkout...");
+            } else {
+                alert("Your cart is empty.");
+            }
+        });
+    </script>
+</body>
+</html>
