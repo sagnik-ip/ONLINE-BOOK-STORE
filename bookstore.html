@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bookstore-container">
+        <header class="bookstore-header">
+            <h1>Available Books</h1>
+            <p>Your favorite books, just a touch away!</p>
+        </header>
+        <section class="search-section">
+            <input type="text" id="search-bar" placeholder="Search for a book...">
+        </section>
+        <section class="books-section">
+            <h2>Available Books</h2>
+            <div class="book-gallery">
+                <!-- Book 1 -->
+                <div class="book-item">
+                    <a href="https://en.wikipedia.org/wiki/The_Great_Gatsby" target="_blank">
+                        <img src="tokill.jpg" alt="The Great Gatsby">
+                        <h3>The Great Gatsby</h3>
+                    </a>
+                    <p>by F. Scott Fitzgerald</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-item">
+                    <a href="https://en.wikipedia.org/wiki/1984_(novel)" target="_blank">
+                        <img src="thebooktheif.jpg" alt="1984">
+                        <h3>1984</h3>
+                    </a>
+                    <p>by George Orwell</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-item">
+                    <a href="https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird" target="_blank">
+                        <img src="thelord.jpg" alt="To Kill a Mockingbird">
+                        <h3>To Kill a Mockingbird</h3>
+                    </a>
+                    <p>by Harper Lee</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-item">
+                    <a href="https://en.wikipedia.org/wiki/Pride_and_Prejudice" target="_blank">
+                        <img src="HarryPorter.jpg" alt="Pride and Prejudice">
+                        <h3>Pride and Prejudice</h3>
+                    </a>
+                    <p>by Jane Austen</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Simple search functionality
+        const searchInput = document.getElementById('search-bar');
+        const books = document.querySelectorAll('.book-item');
+
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.toLowerCase();
+
+            books.forEach(book => {
+                const title = book.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    book.style.display = 'block';
+                } else {
+                    book.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
