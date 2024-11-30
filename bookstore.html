@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="bookstore-container">
+        <header class="navbar">
+            <div class="hamburger-icon" id="hamburgerIcon">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+            <h1 class="title">Available Books</h1>
+            <div class="logo-container">
+              <img src="image.jpg" alt="EPIC SHELF Logo" class="logo">
+            </div>
+            <div class="popup-menu" id="popupMenu">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="About-us.html">About Us</a></li>
+                <li><a href="customer-care.html">Customer Care</a></li>
+              </ul>
+            </div>
+        </header>
+
+        <section class="search-section">
+            <input type="text" id="search-bar" placeholder="Search for a book...">
+        </section>
+
+        <section class="books-section">
+            <div class="book-gallery">
+                <!-- Book 1 -->
+                <div class="book-item">
+                    <a href="https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird" target="_blank">
+                        <img src="tokill.jpg" alt=" Harper Lee">
+                        <h3>To Kill A Mockingbird</h3>
+                    </a>
+                    <p>by Harper lee</p>
+                    <p class="price">₹800</p>
+                    <button class="add-to-cart" data-title=" Harper Lee" data-price="800">Add to Cart</button>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-item">
+                    <a href="https://en.wikipedia.org/wiki/The_Book_Thief" target="_blank">
+                        <img src="thebooktheif.jpg" alt="The Book Theif">
+                        <h3>The Book Thief</h3>
+                    </a>
+                    <p>by Markus Zusak </p>
+                    <p class="price">₹600</p>
+                    <button class="add-to-cart" data-title="1984" data-price="600">Add to Cart</button>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-item">
+                    <a href="https://en.wikipedia.org/wiki/The_Lord_of_the_Rings" target="_blank">
+                        <img src="thelord.jpg" alt="The Lord OF The Rings">
+                        <h3>The Lord OF The Rings</h3>
+                    </a>
+                    <p>by John Ronald Reuel Tolkien</p>
+                    <p class="price">₹700</p>
+                    <button class="add-to-cart" data-title="The Lord OF The Rings" data-price="700">Add to Cart</button>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-item">
+                    <a href="https://en.wikipedia.org/wiki/Harry_Potter" target="_blank">
+                        <img src="HarryPorter.jpg" alt="Harry Potter">
+                        <h3>Harry Potter</h3>
+                    </a>
+                    <p>by J. K. Rowling</p>
+                    <p class="price">₹500</p>
+                    <button class="add-to-cart" data-title="Harry Potter" data-price="500">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Add this script at the bottom of your bookstore.html -->
+<script>
+    // Handle Add to Cart
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const title = this.dataset.title;
+            const price = parseFloat(this.dataset.price);
+
+            // Get cart from localStorage or initialize it
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.title === title);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ title, price, quantity: 1 });
+            }
+
+            // Save the cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert(`${title} has been added to your cart.`);
+        });
+    });
+</script>
+
+
+    <script>
+        // Toggle Popup Menu
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const popupMenu = document.getElementById('popupMenu');
+        
+        hamburgerIcon.addEventListener('click', () => {
+          popupMenu.classList.toggle('show');
+          hamburgerIcon.classList.toggle('active');
+        });
+        </script>
+</body>
+</html>
