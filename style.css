@@ -1,0 +1,683 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    height: 70px;
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hamburger-icon .line {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-icon.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-icon.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.logo-container {
+    margin-right: 10px;
+}
+
+.logo-container .logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: #f1c40f;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 110;
+    display: flex;
+    align-items: center;
+}
+
+/* Popup Menu */
+.popup-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 150px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+}
+
+.popup-menu ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Aligns the menu items at the center */
+}
+
+.popup-menu ul li {
+    margin: 10px 0;
+}
+
+.popup-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.popup-menu ul li a:hover {
+    color: #f1c40f;
+}
+
+.popup-menu.show {
+    display: block;
+}
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.main-content {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar */
+
+
+
+
+/* Cart Container */
+.cart-container {
+    margin-top: 80px; /* Adjusted spacing to give some space below the header */
+    text-align: center;
+}
+
+.cart-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #0077b6;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Cart Items */
+.cart-items {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-item {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Cart Item Details */
+.cart-item-info {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.cart-item-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+.cart-item-price {
+    color: #0077b6;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Quantity Controls */
+.cart-item-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.cart-item-quantity button {
+    background-color: #0077b6;
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-item-quantity button:hover {
+    background-color: #005f8c;
+}
+
+/* Delete Button */
+.delete-btn i {
+    color: #ff4d4d;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Cart Summary */
+.cart-summary {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cart-summary p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#checkout-btn {
+    background-color: #52b788;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#checkout-btn:hover {
+    background-color: #40916c;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hamburger-icon {
+        display: flex;
+    }
+
+    .popup-menu {
+        top: 50px;
+        right: 10px;
+        width: 200px;
+    }
+
+    .popup-menu ul li {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    background-image: url('image2.jpg'); /* Replace 'image2.jpg' with your desired image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* Glow animation for h1 text */
+/* Subtle Glow Effect */
+/* Fade-In Effect and Base Style */
+.glow {
+    font-size: 3rem; /* Adjust size for your preference */
+    font-weight: bold;
+    color: #8B4513; /* Start with a brown color */
+    text-align: center;
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease forwards; /* Smooth fade-in animation */
+    transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease; /* Smooth interaction */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        color: #8B4513; /* Brown at the beginning */
+    }
+    100% {
+        opacity: 1;
+        color: #8B4513; /* Remains brown after fading in */
+    }
+}
+
+/* Pop-Up and Glow on Hover */
+.glow:hover {
+    color: #f1c40f; /* Change to glowing gold */
+    text-shadow: 0 0 15px #f39c12, 0 0 25px #f1c40f, 0 0 35px #e67e22;
+    transform: scale(1.1); /* Slight enlargement */
+    cursor: pointer; /* Indicate interactivity */
+}
+
+
+
+
+.hero1 {
+    display: flex; /* Center align content */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 10vh; /* Full-screen height */
+    text-align: center; /* Center text */
+    background: linear-gradient(135deg, #7a7652, #3b2520); /* Gradient background */
+    padding: 20px; /* Space around the content */
+    color: #f1c40f; /* Text color */
+}
+
+.hero1 h2 {
+    font-size: 1.5rem; /* Larger font size for the heading */
+    margin-bottom: .5rem; /* Space below the heading */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Shadow effect */
+}
+
+.hero1 p {
+    font-size: 1.2rem; /* Standard text size */
+    margin-top: 0; /* Reset any additional margins */
+    color: #fff; /* White color for contrast */
+    line-height: 1.5; /* Improve readability */
+}
+
+
+/* Glow animation for h1 text */
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #e67e22;
+    }
+    50% {
+        text-shadow: 0 0 15px #f39c12, 0 0 25px #f39c12, 0 0 35px #e74c3c;
+    }
+}
+footer {
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center the text */
+    align-items: center; /* Align items vertically */
+    text-align: center; /* Center align text */
+    height: 10vh; /* Footer height */
+    background: #222; /* Dark background */
+    color: #fff; /* White text */
+    font-size: 1rem; /* Standard text size */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    padding: 10px; /* Inner spacing */
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Font styling */
+    color: #f1c40f; /* Gold text color */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+@media screen and (max-width: 200px) {
+    .hero1 h1 {
+        font-size: 2rem; /* Adjust font size for smaller devices */
+    }
+    
+    footer {
+        font-size: 0.9rem; /* Slightly smaller text */
+        padding: 15px;
+    }
+}
+
+
+
+/* Login Page */
+.login-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-form-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f1c40f;
+}
+
+.login-form-container .input-group {
+    margin-bottom: 20px;
+}
+
+.login-form-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #f1c40f;
+}
+
+.login-form-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+button.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f1c40f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover {
+    background-color: #e67e22;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.signup-link a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Signup Page */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('signup.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.signup-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-form h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.signup-form .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.signup-form label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button.signup-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.signup-btn:hover {
+    background-color: #f1c40f;
+}
+
+/* Book Gallery Styles */
+.bookstore-header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6); /* Adds a dark overlay to make the text more readable */
+    padding: 20px;
+    margin: 0;
+    border-radius: 5px;
+}
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-image: url('bookstore.jpg'); /* Set background image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    background-position: center; /* Centers the image */
+}
+
+/* Search Bar Styling */
+#search-bar {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #f1c40f;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease;
+
+    /* Add more space above the search bar */
+    margin-top: 100px; /* Adjust this value to push it further down */
+}
+
+#search-bar:focus {
+    border-color: #e67e22;
+}
+
+/* Search Section to handle spacing */
+.search-section {
+    text-align: center;
+    margin-top: 100px; /* Pushes the whole search section down */
+}
+
+
+
+/* Book Gallery Styling */
+.book-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.book-item {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for books */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.book-item:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.book-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.book-item h3 {
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+}
+
+.book-item p {
+    font-size: 1rem;
+    margin: 5px 0 10px;
+}
+
+.book-item button {
+    background-color: #f1c40f;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-item button:hover {
+    background-color: #e67e22;
+    color: #fff;
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: 60px;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 25px;
+        letter-spacing: 1px;
+    }
+
+    .popup-menu {
+        left: 10px;
+        top: 60px;
+    }
+
+    .login-form-container {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .signup-form {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .book-gallery {
+        padding: 20px;
+    }
+}
+
