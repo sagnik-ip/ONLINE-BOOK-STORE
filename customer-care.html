@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Care - Epic Shelf</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Image -->
+    <div class="background-image">
+        <img src="customer.png" alt="Customer Support" class="background-img">
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="bookstore-container">
+            <header class="navbar">
+                <div class="hamburger-icon" id="hamburgerIcon">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <h1 class="title">CUSTOMER CARE</h1> <!-- Centered header text -->
+                <div class="logo-container">
+                    <img src="image.jpg" alt="EPIC SHELF Logo" class="logo">
+                </div>
+                <div class="popup-menu" id="popupMenu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                        <li><a href="bookstore.html">Bookstore</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="About-us.html">About Us</a></li>
+                        
+                    </ul>
+                </div>
+            </header>
+
+            <p class="page-subtitle">We're here to assist you with anything you need!</p>
+
+
+            <div class="contact-container">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt contact-icon"></i>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+918119060565" class="contact-link">+91 81190 60565</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:sagnikuna@gmail.com" class="contact-link">sagnikuna@gmail.com</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-instagram contact-icon"></i>
+                    <h3>Follow Us</h3>
+                    <p><a href="https://www.instagram.com/echosagnik/" class="contact-link" target="_blank">@echosagnik</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                    <h3>Connect</h3>
+                    <p><a href="https://www.linkedin.com/in/sagnik-roy-chowdhury-1522532ab/" class="contact-link" target="_blank">Sagnik Roy Chowdhury</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Epic Shelf. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Toggling popup menu visibility
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const popupMenu = document.getElementById('popupMenu');
+
+        hamburgerIcon.addEventListener('click', function() {
+            // Toggle the popup menu visibility
+            popupMenu.classList.toggle('show');
+            // Toggle the active state of hamburger icon
+            hamburgerIcon.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
