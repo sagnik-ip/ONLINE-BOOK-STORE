@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPIC SHELF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="hamburger-icon" id="hamburgerIcon">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <h1 class="title">HOME</h1>
+    <div class="logo-container">
+      <img src="image.jpg" alt="EPIC SHELF Logo" class="logo">
+    </div>
+    <div class="popup-menu" id="popupMenu">
+      <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="bookstore.html">Book Store</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="About-us.html">About Us</a></li>
+        <li><a href="customer-care.html">Customer Care</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="glow">WELCOME TO EPIC SHELF</h1>
+  </section>
+
+  <!-- Additional Hero Section -->
+  <section class="hero1">
+    <h2>Your Journey Begins with a Page</h2> 
+    <p>Discover books you'll love and share your adventures.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2024 EPIC SHELF. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle Popup Menu
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const popupMenu = document.getElementById('popupMenu');
+
+    hamburgerIcon.addEventListener('click', () => {
+      popupMenu.classList.toggle('show');
+      hamburgerIcon.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!hamburgerIcon.contains(event.target) && !popupMenu.contains(event.target)) {
+        popupMenu.classList.remove('show');
+        hamburgerIcon.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
